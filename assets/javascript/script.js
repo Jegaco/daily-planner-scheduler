@@ -10,17 +10,13 @@ $(function() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  $(".savebtn").click(function (e) { 
+  $(".saveBtn").click(function (e) { 
     e.preventDefault();
 
     var task = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
     
-    dailyTasks.push({
-      time: time,
-      task: task,
-    })
-    localStorage.setItem("dailyTasks", JSON.stringify(dailyTasks));
+    localStorage.setItem(time , task)
     console.log(localStorage);
   })
   
