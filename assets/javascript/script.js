@@ -19,26 +19,24 @@ $(function() {
   
   // Function compares current time to id and adds the past(grey text area), future(green text area) or present(red text area) class.
   
-  // Code currently not working
-    function compareTime() {
-      var currentHour = dayjs().hour();
-      var diffHour = currentHour.diff(today, "hour");
-      
-      $(".time-block").each(function() { 
-         if (diffHour < currentHour) {
-          $(this).addClass("past");
+  // Logs current hour in console
+  $(".time-block").each(function() { 
+    var currentHour = dayjs().hour();
+    console.log(currentHour);
 
-         } else if (diffHour > currentHour) {
-          $(this).addClass("future");
+    for (var i = 9; i < 18; i++) {
+      if (currentHour < i) {
+        $("#hour-"+i).addClass("past");
 
-         } else if (diffHour === currentHour) {
-          $(this).addClass("present");
-          
-         }
-      });
-    };
+       } else if (currentHour > i) {
+        $("#hour-"+i).addClass("future");
 
- 
+       } else if (currentHour === i) {
+        $("#hour-"+i).addClass("present");
+        
+       }
+    }
+  });
 
   // Gets user input saved in local storage and sets the value in text area to that data
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
