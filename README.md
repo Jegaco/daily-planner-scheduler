@@ -33,3 +33,5 @@ Preview of application viewed on a desktop web browser.
 
 ![screenshot of index.html](/assets/images/Work%20Day%20Scheduler%20(1).png)
 
+## Credits
+* Numerous stackoverflow threads, youtube videos and fellow classmate input.
